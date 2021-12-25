@@ -14,13 +14,18 @@ class GameSprite(sprite.Sprite):
  
  
 class Player(GameSprite):
-    def update(self):
+    def update_l(self):
         keys = key.get_pressed()
-        if keys [K_LEFT] and self.rect.x > 5:
+        if keys [K_UP] and self.rect.x > 5:
             self.rect.x -= self.speed
-        if keys [K_RIGHT] and self.rect.x < 1700:
+        if keys [K_DOWN] and self.rect.x < 1700:
             self.rect.x += self.speed
-
+    def update_r(self):
+        keys = key.get_pressed()
+        if keys [K_w] and self.rect.x > 5:
+            self.rect.x -= self.speed
+        if keys [K_s] and self.rect.x < 1700:
+            self.rect.x += self.speed
 
 #Сцена
 back = (200,255,255)
